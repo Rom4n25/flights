@@ -1,21 +1,15 @@
-import { useState } from 'react'
-import InputCity from "./components/InputCity";
-import AirportsTable from './components/AirportsTable';
 import Header from './components/Header';
-
+import Navigation from './components/Navigation';
+import Main from './components/Main';
+ 
 const App = () => {
 
-  const [city, setCity] = useState("");
-  const [airportsList, setAirportsList] = useState([]);
-
-
   return (
-    <div>
-      <Header />
-      <InputCity city={city} setCity={setCity} setAirportsList={setAirportsList} />
-      <AirportsTable airportsList={airportsList} />
-      
-    </div>
+    <>
+      <Header/>
+      <Navigation/>
+      <Main/>
+    </>
   );
 }
 

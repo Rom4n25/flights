@@ -1,5 +1,7 @@
-const FlightDetails = ( {flightDetail} ) => {
+import { useSelector } from "react-redux";
 
+const FlightDetails = () => {
+const flightDetail = useSelector(state => state.flightDetail);
 
  if(flightDetail.length===0){
      return (

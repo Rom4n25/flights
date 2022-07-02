@@ -28,6 +28,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background-color: #edf6f9;
+	height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -43,4 +44,10 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+#root{
+	display:grid;
+	grid-template-rows: 1fr 5fr;
+	grid-template-columns: 1fr 5fr;
+	height: 100vh;
 }
