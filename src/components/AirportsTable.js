@@ -6,10 +6,10 @@ const wrapperStyle = {
 }
 
 const tableStyle = {
-    width:"410px",
     textAlign:"left",
     fontSize: "18px",
 }
+
 
 const thStyle = {
     paddingBottom: "10px"
@@ -30,6 +30,7 @@ const AirportsTable = () =>{
     const dispatch = useDispatch();
     
     const clickEffect = (airport) =>{
+        console.log(airport)
         dispatch(setFlightsList([]))
         dispatch(setFlightDetail([]));
         dispatch(setAirport(airport));

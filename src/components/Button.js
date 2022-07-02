@@ -1,10 +1,10 @@
 const Button = ({text}) => {
 
     const style = {
-        padding: "12px 16px",
+        padding: "10px 12px",
         borderRadius: "20px",
         border: "none",
-        fontSize: "18px",
+        fontSize: "14px",
         fontWeight: "600",
         cursor: "pointer",
         backgroundColor:"#00b4d8",

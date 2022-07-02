@@ -8,14 +8,22 @@ const flightData = () => {
         return response;
     }
 
-    async function findFlights(airport,beginDate,endDate){
+    async function findArrivals(airport,beginDate,endDate){
         
         let response = await fetch("https://opensky-network.org/api/flights/arrival?airport="+airport+"&begin="+beginDate+"&end="+endDate);
             response = await response.json();
         return response;
     }
 
-    return{findAirports,findFlights}
+
+    async function findDepartures(airport,beginDate,endDate){
+        
+        let response = await fetch("https://opensky-network.org/api/flights/departure?airport="+airport+"&begin="+beginDate+"&end="+endDate);
+            response = await response.json();
+        return response;
+    }
+
+    return{findAirports,findArrivals, findDepartures}
 }
 
 export default flightData

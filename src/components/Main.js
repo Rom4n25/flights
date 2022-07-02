@@ -5,8 +5,9 @@ const Main = () => {
     const mainStyle = {
         display:"flex",
         backgroundColor: "white",
-        flex: "1"
-
+        flex: "1",
+        padding: "25px",
+        overflow: "hidden"
     }
 
     return (

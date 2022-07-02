@@ -1,19 +1,35 @@
-import { useSelector } from "react-redux";
+const FlightDetails = ( {flight}) => {
+  
+    const convertTime = (time) => {
+        const date = (new Date(time*1000)).toUTCString();
+        return date
+    }
 
-const FlightDetails = () => {
-const flightDetail = useSelector(state => state.flightDetail);
+    const tdStyle = {
+        padding: "5px 0px",
+        verticalAlign: "middle",
+        textAlign: "left"
+    }
+    
+    const trStyle = {
+        borderBottom: "1px black solid",
+    }
 
- if(flightDetail.length===0){
+
+ if(flight.length===0){
      return (
          <></>
      )
  }
     return (
-        <div>
-            <h1>Details</h1>
-            <p>First seen: {flightDetail.firstSeen}</p>
-            <p>Last seen: {flightDetail.lastSeen}</p>
-        </div>
+        <tr style={trStyle}>
+            <td style={tdStyle}>{convertTime(flight.firstSeen)} </td>
+            <td style={tdStyle}>{convertTime(flight.lastSeen)} </td>
+            <td style={tdStyle}>{flight.estDepartureAirport} </td>
+            <td style={tdStyle}>{flight.callsign} </td>
+            <td style={tdStyle}>{flight.icao24} </td>
+        </tr>
+          
     )
 }
 
