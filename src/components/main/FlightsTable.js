@@ -8,6 +8,7 @@ const styles = {
     },
 
     table: {
+        margin:"20px",
         borderCollapse: "separate",
         borderSpacing: "20px 2px",
         textAlign:"left",

@@ -24,9 +24,10 @@ const AirportDetails = () => {
             gap: "4px",
             padding: "20px",
             fontSize: "18px",
-            backgroundColor: "rgba(108, 117, 125, 0.15)",
+            backgroundColor: "rgba(248, 247, 255, 0.8)",
             borderRadius: "25px",
-            color: "#182825"
+            color: "#182825",
+            maxWidth: "450px",
         },
 
         h1:{
@@ -42,6 +43,11 @@ const AirportDetails = () => {
         },
 
         flightsTable:{
+            backgroundColor: "rgba(248, 247, 255, 0.8)",
+            borderTopLeftRadius: "25px",
+            borderBottomLeftRadius: "25px",
+            marginLeft: "20px",
+            marinRight:"20px",
             display: "flex",
             justifyContent: "center",
             flex:"1",

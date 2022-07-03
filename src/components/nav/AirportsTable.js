@@ -10,7 +10,7 @@ const styles = {
     table:{
         textAlign:"left",
         fontSize: "18px",
-        width: "100%"
+        width: "100%",
     },
 
     th:{

@@ -8,15 +8,21 @@ const Main = () => {
 
     const style = {
         display:"flex",
-        backgroundColor: "rgba(248, 247, 255, 0.9)",
+        backgroundColor: "rgba(248, 247, 255, 0.2)",
         padding: "25px",
-        overflow: "hidden",
         margin: "35px",
         borderRadius: "25px",
-        minWidth: "300px"
+        minWidth: "750px",
+        height: "70vh"
     }
 
-    if(airport.length===0) return <WelcomeContent/>
+    if(airport.length===0){
+        return (
+            <main style={style}>
+                <WelcomeContent/>
+            </main>
+        )
+    }
 
     return (
         <main style={style}>

@@ -5,7 +5,7 @@ const Header = () => {
         header:{
             display: "flex",
             alignItems: "flex-end",
-            backgroundColor: "rgba(248, 247, 255, 0.4)",
+            backgroundColor: "rgba(248, 247, 255, 0.3)",
             fontSize:"86px",
             padding:"15px",
             gridColumnStart: "1",
