@@ -38,3 +38,9 @@ export const setLoadImg = () => {
         type: "setLoadImg"
     }
 }
+
+export const setFlightsLoadImg = () => {
+    return {
+        type: "setFlightsLoadImg"
+    }
+}

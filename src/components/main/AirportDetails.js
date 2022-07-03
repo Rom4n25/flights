@@ -1,17 +1,20 @@
 import FlightsTable from "./FlightsTable"
 import flightData from "../../services/flightData";
+import loading from "../../img/loading.svg";
 import {useSelector, useDispatch} from "react-redux";
-import {setFlightsList} from "../../actions/index";
+import {setFlightsList, setFlightsLoadImg} from "../../actions/index";
 
 
 const AirportDetails = () => {
     const airport = useSelector(state => state.airport);
+    const loadedImg = useSelector(state => state.flightsLoadingImg);
     const dispatch = useDispatch();
     
     const styles = {
         
         wrapper:{
-            overflow: "hidden"
+            
+            overflow: "hidden",
         },
 
         airportDetail:{
@@ -27,7 +30,15 @@ const AirportDetails = () => {
 
         h1:{
             fontSize: "28px"
-        }
+        },
+
+        loadImg:{
+            margin: "100px auto",
+            height: "60px",
+            width: "60px",
+            backgroundImage:`url(${loading})`,
+            animation: "rotation 2s infinite linear"
+        },
     }
 
     const getCalendarMaxDate = () => {
@@ -48,6 +59,7 @@ const AirportDetails = () => {
 
     const submitEffect = (e,type) => {
         e.preventDefault();
+        dispatch(setFlightsLoadImg());
         
         const beginDate = e.target[0].value;
         const endDate = e.target[1].value;
@@ -57,10 +69,16 @@ const AirportDetails = () => {
 
         if(type==="arrivals"){
             flightData().findArrivals(airport.key,beginDateTimestamp,endDateTimestamp).then(
-                data => dispatch(setFlightsList(data)));
+                data => {
+                    dispatch(setFlightsList(data));
+                    dispatch(setFlightsLoadImg());        
+                });
         }else if(type==="departures"){
             flightData().findDepartures(airport.key,beginDateTimestamp,endDateTimestamp).then(
-                data => dispatch(setFlightsList(data)));
+                data => {
+                    dispatch(setFlightsList(data));
+                    dispatch(setFlightsLoadImg()); 
+                });
         }
     }
 
@@ -89,7 +107,7 @@ const AirportDetails = () => {
                         <button>Check</button>
                     </form>
                 </div>
-            <FlightsTable/>
+                {loadedImg?<div style={styles.loadImg}></div>:<FlightsTable/>}
         </div>
     )
 }

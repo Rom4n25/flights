@@ -7,7 +7,7 @@ const Input = () => {
 
     const dispatch = useDispatch();
     const city = useSelector(state => state.city)
-    let loadedImg = useSelector(state => state.loadingImg);
+    let loadedImg = useSelector(state => state.airportsLoadingImg);
     
     const styles = {
         

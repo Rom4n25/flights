@@ -3,7 +3,8 @@ import flightsListReducer from "./flightsList";
 import flightDetailReducer from "./flightDetail"
 import cityReducer from "./city"
 import airportsListReducer from "./airportsList"
-import loadingImgReducer from "./loadingImg";
+import airportsLoadingImgReducer from "./airportsLoadingImg";
+import flightsLoadingImgReducer from "./flightsLoadingImg";
 import {combineReducers} from 'redux';
 
 
@@ -13,7 +14,8 @@ const allReducers = combineReducers({
     flightDetail: flightDetailReducer,
     city: cityReducer,
     airportsList: airportsListReducer,
-    loadingImg: loadingImgReducer
+    airportsLoadingImg: airportsLoadingImgReducer,
+    flightsLoadingImg: flightsLoadingImgReducer
 })
 
 export default allReducers
