@@ -15,7 +15,7 @@ const Input = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "20px"
+            padding: "30px 20px 0px 20px"
         },
 
         input:{
@@ -28,15 +28,15 @@ const Input = () => {
         },
 
         loadImg:{
-            height: "30px",
-            width: "30px",
+            height: "40px",
+            width: "40px",
             backgroundImage:`url(${loading})`,
             animation: "rotation 2s infinite linear"
         },
 
         emptyDiv:{
-            height: "30px",
-            width: "30px",
+            height: "40px",
+            width: "40px",
         },
 
         btn:{

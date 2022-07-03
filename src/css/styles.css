@@ -37,7 +37,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: #edf6f9;
+	background: url(../img/background.jpg) no-repeat center center fixed; 
 	height: 100vh;
 }
 ol, ul {
@@ -57,7 +57,7 @@ table {
 }
 #root{
 	display:grid;
-	grid-template-rows: 1fr 5fr;
+	grid-template-rows: 1fr 4fr;
 	grid-template-columns: 1fr 5fr;
 	height: 100vh;
 }

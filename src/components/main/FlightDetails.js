@@ -10,7 +10,8 @@ const FlightDetails = ( {flight}) => {
         td:{
             padding: "5px 0px",
             verticalAlign: "middle",
-            textAlign: "left"
+            textAlign: "left",
+            
         },
 
         tr:{
@@ -21,7 +22,7 @@ const FlightDetails = ( {flight}) => {
  if(flight.length===0) return <div></div>
   
     return (
-        <tr key={flight.icao24} style={styles.tr}>
+        <tr key={flight.icao24+flight.firstSeen} style={styles.tr}>
             <td style={styles.td}>{convertTime(flight.firstSeen)}</td>
             <td style={styles.td}>{convertTime(flight.lastSeen)}</td>
             <td style={styles.td}>{flight.estDepartureAirport}</td>

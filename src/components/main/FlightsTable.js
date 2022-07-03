@@ -5,22 +5,18 @@ const styles = {
     
     wrapper: {
         padding: "20px",
-        overflowY: "scroll",
-        overflowX: "hidden",
-        maxHeight: "400px",
-        borderBottom: "20px solid #edf6f9",
-        borderLeft: "20px solid #edf6f9",
     },
 
     table: {
-        width:"850px",
+        borderCollapse: "separate",
+        borderSpacing: "20px 2px",
         textAlign:"left",
-        fontSize: "18px",
+        fontSize: "16px",
     },
 
     th: {
         paddingBottom: "10px"
-    }
+    },
 }
 
 const FlightsTable = () => {
@@ -43,7 +39,7 @@ const FlightsTable = () => {
                 </thead>
                 <tbody>
                     {flightsList.map(flight => 
-                        <FlightDetails flight={flight}/>
+                        <FlightDetails key={flight.firstSeen+flight.icao24} flight={flight}/>
                     )}
                 </tbody>
             </table>

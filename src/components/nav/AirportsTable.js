@@ -4,7 +4,7 @@ import {setAirport, setFlightsList, setFlightDetail} from "../../actions/index"
 const styles = {
     
     wrapper:{
-        padding: "20px",
+        padding: "0px 25px 25px 25px",
     },
 
     table:{

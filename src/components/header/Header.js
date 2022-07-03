@@ -1,18 +1,21 @@
 const Header = () => {
 
-    const style = {
-        display: "flex",
-        alignItems: "flex-end",
-        backgroundColor:"#00b4d8",
-        fontSize:"72px",
-        padding:"20px",
-        color: "#edf6f9",
-        gridColumnStart: "1",
-        gridColumnEnd: "3",
+    const styles = {
+        
+        header:{
+            display: "flex",
+            alignItems: "flex-end",
+            backgroundColor: "rgba(248, 247, 255, 0.4)",
+            fontSize:"86px",
+            padding:"15px",
+            gridColumnStart: "1",
+            gridColumnEnd: "3",
+            borderBottom: "3px solid black"
+        },
     }
 
     return (
-        <header style={style}>World Airports</header>
+        <header style={styles.header}><div>World Airports</div></header>
     )
 }
 

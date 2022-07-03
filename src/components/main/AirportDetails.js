@@ -13,18 +13,19 @@ const AirportDetails = () => {
     const styles = {
         
         wrapper:{
-            
-            overflow: "hidden",
+            flex: "1",
+            display: "flex",
+            overflowX: "auto"
         },
 
         airportDetail:{
-            display: "flex",
-            width: "905px",
             flexDirection: "column",
+            lineHeight: "1.2",
             gap: "4px",
             padding: "20px",
             fontSize: "18px",
-            backgroundColor: "#edf6f9",
+            backgroundColor: "rgba(108, 117, 125, 0.15)",
+            borderRadius: "25px",
             color: "#182825"
         },
 
@@ -33,12 +34,39 @@ const AirportDetails = () => {
         },
 
         loadImg:{
-            margin: "100px auto",
+            margin: "auto",
             height: "60px",
             width: "60px",
             backgroundImage:`url(${loading})`,
             animation: "rotation 2s infinite linear"
         },
+
+        flightsTable:{
+            display: "flex",
+            justifyContent: "center",
+            flex:"1",
+            overflowY: "auto",
+            minWidth:"500px"
+        },
+
+        input: {
+            marginRight: "10px", 
+            borderRadius: "20px",
+            border: "none",
+            padding: "7px",
+            cursor: "pointer",
+            margin: "5px 15px 5px 0px"
+        },
+
+        btn:{
+            borderRadius: "15px",
+            border: "none",
+            cursor: "pointer",
+            padding: "7px 12px",
+            backgroundColor: "#00b4d8",
+            color: "white",
+            fontSize: "14px"
+        }
     }
 
     const getCalendarMaxDate = () => {
@@ -95,19 +123,22 @@ const AirportDetails = () => {
 
                     Arrivals:
                     <form onSubmit={(e)=>{submitEffect(e,"arrivals")}}>
-                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
-                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
-                        <button>Check</button>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <button style={styles.btn}>Check</button>
                     </form>
 
                     Departures:
                     <form onSubmit={(e)=>{submitEffect(e,"departures")}}>
-                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
-                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
-                        <button>Check</button>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <button style={styles.btn}>Check</button>
                     </form>
                 </div>
-                {loadedImg?<div style={styles.loadImg}></div>:<FlightsTable/>}
+                <div style={styles.flightsTable}>
+                    {loadedImg?<div style={styles.loadImg}></div>:<FlightsTable/>}
+                </div>
+                
         </div>
     )
 }
