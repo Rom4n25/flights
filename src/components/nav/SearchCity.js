@@ -73,7 +73,7 @@ const Input = () => {
         <div>
             <form onSubmit={displayAirports}>
                 <div style={styles.wrapper}>
-                    <input style={styles.input} value={city} onChange={displayInput} placeholder="Type City..."></input>
+                    <input style={styles.input} value={city} onChange={displayInput} placeholder="Type City..." required></input>
                     <button disabled={loadedImg} style={styles.btn}>Search</button>
                     {loadedImg? 
                         <div style={styles.loadImg}></div>:

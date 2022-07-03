@@ -123,15 +123,15 @@ const AirportDetails = () => {
 
                     Arrivals:
                     <form onSubmit={(e)=>{submitEffect(e,"arrivals")}}>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
                         <button style={styles.btn}>Check</button>
                     </form>
 
                     Departures:
                     <form onSubmit={(e)=>{submitEffect(e,"departures")}}>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
+                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
                         <button style={styles.btn}>Check</button>
                     </form>
                 </div>
