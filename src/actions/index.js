@@ -32,3 +32,9 @@ export const setAirportsList = (airportsList) => {
         data: airportsList
     }
 }
+
+export const setLoadImg = () => {
+    return {
+        type: "setLoadImg"
+    }
+}

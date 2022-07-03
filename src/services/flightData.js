@@ -1,10 +1,9 @@
-
 const flightData = () => {
-
     async function findAirports (city) {
 
         let response = await fetch("https://world-airports.herokuapp.com/"+city,{mode:"cors"});
             response = await response.json();
+           
         return response;
     }
 

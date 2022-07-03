@@ -1,34 +1,36 @@
 import FlightsTable from "./FlightsTable"
-import flightData from "../services/flightData";
-import { useSelector, useDispatch } from "react-redux";
-import { setFlightsList} from "../actions/index";
+import flightData from "../../services/flightData";
+import {useSelector, useDispatch} from "react-redux";
+import {setFlightsList} from "../../actions/index";
 
 
-const AirportDetail = () => {
+const AirportDetails = () => {
     const airport = useSelector(state => state.airport);
     const dispatch = useDispatch();
     
-    const wrapperStyle = {
-        border: "10px solid #eccbd9",
-        overflow: "hidden"
+    const styles = {
+        
+        wrapper:{
+            overflow: "hidden"
+        },
+
+        airportDetail:{
+            display: "flex",
+            width: "905px",
+            flexDirection: "column",
+            gap: "4px",
+            padding: "20px",
+            fontSize: "18px",
+            backgroundColor: "#edf6f9",
+            color: "#182825"
+        },
+
+        h1:{
+            fontSize: "28px"
+        }
     }
 
-    const airportDetailStyle = {
-        display: "flex",
-        width: "905px",
-        flexDirection: "column",
-        gap: "4px",
-        padding: "20px",
-        fontSize: "18px",
-        backgroundColor: "#eccbd9",
-        color: "#182825"
-    }
-
-    const h1Style = {
-        fontSize: "28px"
-    }
-
-    const maxDate = () => {
+    const getCalendarMaxDate = () => {
         const currentDate = new Date();
         const twoDaysAgoDateMs = (currentDate.getTime(currentDate)/1000)-172800
         const maxDate = new Date(twoDaysAgoDateMs*1000).toISOString().replace(/T.*/,'').split('-').join('-').toString();
@@ -36,18 +38,17 @@ const AirportDetail = () => {
      return maxDate;
     }
 
-    const minDate = () => {
+    const getCalendarMinDate = () => {
         const currentDate = new Date();
         const monthAgoDateMs = (currentDate.getTime(currentDate)/1000)-2592000
         const minDate = new Date(monthAgoDateMs*1000).toISOString().replace(/T.*/,'').split('-').join('-').toString();
-
-        console.log(minDate)
 
      return minDate;
     }
 
     const submitEffect = (e,type) => {
         e.preventDefault();
+        
         const beginDate = e.target[0].value;
         const endDate = e.target[1].value;
  
@@ -61,15 +62,14 @@ const AirportDetail = () => {
             flightData().findDepartures(airport.key,beginDateTimestamp,endDateTimestamp).then(
                 data => dispatch(setFlightsList(data)));
         }
-        
     }
 
     if(airport.length===0) <div></div>
   
     return (
-        <div style={wrapperStyle}>
-                <div style={airportDetailStyle}>
-                    <h1 style={h1Style}>{airport.name}</h1>
+        <div style={styles.wrapper}>
+                <div style={styles.airportDetail}>
+                    <h1 style={styles.h1}>{airport.name}</h1>
                     <p>City: {airport.city}</p>
                     <p>Country: {airport.country}</p>
                     <p>ICAO: {airport.icao}</p>
@@ -77,15 +77,15 @@ const AirportDetail = () => {
 
                     Arrivals:
                     <form onSubmit={(e)=>{submitEffect(e,"arrivals")}}>
-                        <input type="date" min={minDate()} max={maxDate()}></input>
-                        <input type="date" min={minDate()} max={maxDate()}></input>
+                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
                         <button>Check</button>
                     </form>
 
                     Departures:
                     <form onSubmit={(e)=>{submitEffect(e,"departures")}}>
-                        <input type="date" min={minDate()} max={maxDate()}></input>
-                        <input type="date" min={minDate()} max={maxDate()}></input>
+                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
+                        <input type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()}></input>
                         <button>Check</button>
                     </form>
                 </div>
@@ -94,4 +94,4 @@ const AirportDetail = () => {
     )
 }
 
-export default AirportDetail
+export default AirportDetails

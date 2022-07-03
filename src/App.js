@@ -1,13 +1,13 @@
-import Header from './components/Header';
-import Navigation from './components/Navigation';
-import Main from './components/Main';
+import Header from './components/header/Header';
+import Nav from './components/nav/Nav';
+import Main from './components/main/Main';
  
 const App = () => {
 
   return (
     <>
       <Header/>
-      <Navigation/>
+      <Nav/>
       <Main/>
     </>
   );

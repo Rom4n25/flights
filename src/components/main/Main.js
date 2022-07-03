@@ -1,8 +1,8 @@
-import AirportDetail from "./AirportDetail";
+import AirportDetails from "./AirportDetails";
 
 const Main = () => {
     
-    const mainStyle = {
+    const style = {
         display:"flex",
         backgroundColor: "white",
         flex: "1",
@@ -11,8 +11,8 @@ const Main = () => {
     }
 
     return (
-        <main style={mainStyle}>
-            <AirportDetail/>
+        <main style={style}>
+            <AirportDetails/>
         </main>
     )
 }
