@@ -1,24 +1,16 @@
-import FlightsTable from "./FlightsTable"
 import flightData from "../../services/flightData";
-import loading from "../../img/loading.svg";
-import {useSelector, useDispatch} from "react-redux";
 import {setFlightsList, setFlightsLoadImg} from "../../actions/index";
+import {useSelector, useDispatch} from "react-redux";
+import loading from "../../img/loading.svg";
 
-
-const AirportDetails = () => {
+const AirportInfo = () =>{
     const airport = useSelector(state => state.airport);
-    const loadedImg = useSelector(state => state.flightsLoadingImg);
     const dispatch = useDispatch();
-    
-    const styles = {
-        
-        wrapper:{
-            flex: "1",
-            display: "flex",
-            overflowX: "auto"
-        },
 
-        airportDetail:{
+    const styles = {
+
+        container:{
+            display: "flex",
             flexDirection: "column",
             lineHeight: "1.2",
             gap: "4px",
@@ -27,32 +19,19 @@ const AirportDetails = () => {
             backgroundColor: "rgba(248, 247, 255, 0.8)",
             borderRadius: "25px",
             color: "#182825",
-            maxWidth: "450px",
+            minWidth: "340px",
         },
 
         h1:{
             fontSize: "28px"
         },
 
-        loadImg:{
+        loadedImg:{
             margin: "auto",
             height: "60px",
             width: "60px",
             backgroundImage:`url(${loading})`,
             animation: "rotation 2s infinite linear"
-        },
-
-        flightsTable:{
-            backgroundColor: "rgba(248, 247, 255, 0.8)",
-            borderTopLeftRadius: "25px",
-            borderBottomLeftRadius: "25px",
-            marginLeft: "20px",
-            marinRight:"20px",
-            display: "flex",
-            justifyContent: "center",
-            flex:"1",
-            overflowY: "auto",
-            minWidth:"500px"
         },
 
         input: {
@@ -79,7 +58,6 @@ const AirportDetails = () => {
         const currentDate = new Date();
         const twoDaysAgoDateMs = (currentDate.getTime(currentDate)/1000)-172800
         const maxDate = new Date(twoDaysAgoDateMs*1000).toISOString().replace(/T.*/,'').split('-').join('-').toString();
-
      return maxDate;
     }
 
@@ -87,7 +65,6 @@ const AirportDetails = () => {
         const currentDate = new Date();
         const monthAgoDateMs = (currentDate.getTime(currentDate)/1000)-2592000
         const minDate = new Date(monthAgoDateMs*1000).toISOString().replace(/T.*/,'').split('-').join('-').toString();
-
      return minDate;
     }
 
@@ -104,49 +81,46 @@ const AirportDetails = () => {
         if(type==="arrivals"){
             flightData().findArrivals(airport.key,beginDateTimestamp,endDateTimestamp).then(
                 data => {
-                    dispatch(setFlightsList(data));
-                    dispatch(setFlightsLoadImg());        
-                });
+                dispatch(setFlightsList(data));
+                dispatch(setFlightsLoadImg());        
+            });
+
         }else if(type==="departures"){
             flightData().findDepartures(airport.key,beginDateTimestamp,endDateTimestamp).then(
                 data => {
-                    dispatch(setFlightsList(data));
-                    dispatch(setFlightsLoadImg()); 
-                });
+                dispatch(setFlightsList(data));
+                dispatch(setFlightsLoadImg()); 
+            });
         }
     }
 
     if(airport.length===0) <div></div>
-  
+
     return (
-        <div style={styles.wrapper}>
-                <div style={styles.airportDetail}>
-                    <h1 style={styles.h1}>{airport.name}</h1>
-                    <p>City: {airport.city}</p>
-                    <p>Country: {airport.country}</p>
-                    <p>ICAO: {airport.icao}</p>
-                    <p>IATA: {airport.iata}</p>
+        <div name="wrapper">
+            <div name="container" style={styles.container}>
+                <h1 style={styles.h1}>{airport.name}</h1>
+                <p>City: {airport.city}</p>
+                <p>Country: {airport.country}</p>
+                <p>ICAO: {airport.icao}</p>
+                <p>IATA: {airport.iata}</p>
 
-                    Arrivals:
-                    <form onSubmit={(e)=>{submitEffect(e,"arrivals")}}>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
-                        <button style={styles.btn}>Check</button>
-                    </form>
+                Arrivals:
+                <form onSubmit={(e)=>{submitEffect(e,"arrivals")}}>
+                    <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
+                    <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
+                    <button style={styles.btn}>Check</button>
+                </form>
 
-                    Departures:
-                    <form onSubmit={(e)=>{submitEffect(e,"departures")}}>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
-                        <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
-                        <button style={styles.btn}>Check</button>
-                    </form>
-                </div>
-                <div style={styles.flightsTable}>
-                    {loadedImg?<div style={styles.loadImg}></div>:<FlightsTable/>}
-                </div>
-                
+                Departures:
+                <form onSubmit={(e)=>{submitEffect(e,"departures")}}>
+                    <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
+                    <input style={styles.input} type="date" min={getCalendarMinDate()} max={getCalendarMaxDate()} required></input>
+                    <button style={styles.btn}>Check</button>
+                </form>
+            </div>
         </div>
     )
 }
 
-export default AirportDetails
+export default AirportInfo

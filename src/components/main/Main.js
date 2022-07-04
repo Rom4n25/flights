@@ -1,4 +1,4 @@
-import AirportDetails from "./AirportDetails";
+import Airport from "./Airport";
 import WelcomeContent from "./WelcomeContent";
 import {useSelector} from "react-redux";
 
@@ -29,7 +29,7 @@ const Main = () => {
     return (
         <main>
             <div name="container" style={style.container}>
-                <AirportDetails/>
+                <Airport/>
             </div>
         </main>
     )

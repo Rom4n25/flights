@@ -58,7 +58,7 @@ table {
 }
 #root{
 	display:grid;
-	grid-template-rows: 1fr 4fr;
+	grid-template-rows: 150px 1fr;
 	grid-template-columns: 1fr 5fr;
 	height: 100vh;
 }

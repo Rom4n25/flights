@@ -1,4 +1,4 @@
-const FlightDetails = ( {flight}) => {
+const FlightDetails = ({flight}) => {
   
     const convertTime = (time) => {
         const date = (new Date(time*1000)).toUTCString();

@@ -4,17 +4,18 @@ import {useSelector} from "react-redux";
 const styles = {
     
     wrapper: {
-        padding: "20px",
+        display: "flex",
+        justifyContent: "center",
+        margin: "20px 20px 20px 0px",
+        overflow: "auto",
+        maxHeight: "600px",
     },
 
     table: {
-        margin:"20px",
         borderCollapse: "separate",
         borderSpacing: "20px 2px",
         textAlign:"left",
         fontSize: "16px",
-        overflow: "auto",
-        maxHeight: "600px"
     },
 
     th: {
