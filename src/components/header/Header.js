@@ -5,12 +5,12 @@ const Header = () => {
         header:{
             display: "flex",
             alignItems: "flex-end",
-            backgroundColor: "rgba(248, 247, 255, 0.3)",
+            backgroundImage: "linear-gradient(to left, rgba(248, 247, 255, 0), rgba(248, 247, 255,0.85))",
             fontSize:"86px",
             padding:"15px",
             gridColumnStart: "1",
             gridColumnEnd: "3",
-            borderBottom: "3px solid black"
+            borderBottom: "2px solid rgba(0, 0, 0, 0.4)"
         },
     }
 
