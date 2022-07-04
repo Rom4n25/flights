@@ -1,7 +1,6 @@
 import flightData from "../../services/flightData";
 import {setFlightsList, setFlightsLoadImg} from "../../actions/index";
 import {useSelector, useDispatch} from "react-redux";
-import loading from "../../img/loading.svg";
 
 const AirportInfo = () =>{
     const airport = useSelector(state => state.airport);
@@ -24,14 +23,6 @@ const AirportInfo = () =>{
 
         h1:{
             fontSize: "28px"
-        },
-
-        loadedImg:{
-            margin: "auto",
-            height: "60px",
-            width: "60px",
-            backgroundImage:`url(${loading})`,
-            animation: "rotation 2s infinite linear"
         },
 
         input: {

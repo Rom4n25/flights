@@ -1,5 +1,6 @@
 import FlightsTable from "./FlightsTable";
 import AirportInfo from "./AirportInfo";
+import loading from "../../img/loading.svg";
 import {useSelector} from "react-redux";
 
 const Airport = () => {
@@ -10,6 +11,14 @@ const Airport = () => {
         container:{
             display: "grid",
             gridTemplateColumns: "1fr 3fr",
+        },
+
+        loadedImg:{
+            margin: "auto",
+            height: "60px",
+            width: "60px",
+            backgroundImage:`url(${loading})`,
+            animation: "rotation 2s infinite linear"
         },
 
         flightsTable:{
