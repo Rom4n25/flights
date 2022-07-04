@@ -10,7 +10,7 @@ const Main = () => {
 
         container:{
             backgroundColor: "rgba(248, 247, 255, 0.2)",
-            padding: "25px",
+            padding: "40px",
             margin: "35px",
             borderRadius: "25px",
         }

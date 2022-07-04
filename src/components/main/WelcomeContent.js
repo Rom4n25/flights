@@ -1,12 +1,10 @@
 const WelcomeContent = () => {
 
-
     const styles = {
         
         gridContainer:{
-            flex: "1",
             display: "grid",
-            gap: "20px",
+            gap: "40px",
             gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr)",
             justifyItems: "center",
             alignItems: "center",
