@@ -1,11 +1,11 @@
-import SearchCity from './SearchCity';
+import SearchCity from "./SearchCity";
 import AirportsTable from "./AirportsTable";
 
 const Nav = () => {
 
     return (
         <nav>
-            <div>
+            <div name="wrapper">
                 <SearchCity/>
                 <AirportsTable/>
             </div>
