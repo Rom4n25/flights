@@ -13,6 +13,8 @@ const styles = {
         borderSpacing: "20px 2px",
         textAlign:"left",
         fontSize: "16px",
+        overflow: "auto",
+        maxHeight: "600px"
     },
 
     th: {
@@ -38,7 +40,7 @@ const FlightsTable = () => {
                         <th style={styles.th}>ICAO 24</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style={styles.tBody}>
                     {flightsList.map(flight => 
                         <FlightDetails key={flight.firstSeen+flight.icao24} flight={flight}/>
                     )}

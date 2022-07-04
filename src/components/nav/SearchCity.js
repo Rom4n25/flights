@@ -1,21 +1,23 @@
-import flightData from "../../services/flightData"
+import flightData from "../../services/flightData";
 import {useDispatch, useSelector} from "react-redux";
 import {setAirport, setCity, setAirportsList, setLoadImg} from "../../actions/index";
 import loading from "../../img/loading.svg";
 
-const Input = () => {
+const SearchCity = () => {
 
     const dispatch = useDispatch();
-    const city = useSelector(state => state.city)
-    let loadedImg = useSelector(state => state.airportsLoadingImg);
+    const city = useSelector(state => state.city);
+    let dataIsLoaded = useSelector(state => state.airportsLoadingImg);
     
     const styles = {
         
-        wrapper:{
+        container:{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            padding: "30px 20px 0px 20px"
+            padding: "25px",
+            backgroundColor: "rgba(248, 247, 255, 0.8)",
+            margin: "35px",
+            borderRadius: "25px",
         },
 
         input:{
@@ -23,32 +25,35 @@ const Input = () => {
             border: "none",
             fontSize: "22px",
             padding: "8px",
-            margin: "5px",
-            textIndent: "10px"
+            textIndent: "10px",
+            marginBottom: "12.5px",
         },
 
-        loadImg:{
-            height: "40px",
-            width: "40px",
+        imgDiv:{
+            position: "absolute",
+            top: "4px",
+            right: "70px",
+            height: "30px",
+            width: "30px",
             backgroundImage:`url(${loading})`,
-            animation: "rotation 2s infinite linear"
-        },
-
-        emptyDiv:{
-            height: "40px",
-            width: "40px",
+            animation: "rotation 2s infinite linear",
         },
 
         btn:{
             padding: "10px 12px",
-            borderRadius: "20px",
+            borderRadius: "25px",
             border: "none",
             fontSize: "14px",
             fontWeight: "600",
             cursor: "pointer",
             backgroundColor:"#00b4d8",
             color:"#edf6f9",
-            margin:"10px",
+            margin: "auto",
+        },
+
+        wrapper:{
+            position:"relative",
+            display: "flex",
         }
     }
 
@@ -58,7 +63,7 @@ const Input = () => {
 
     const displayAirports = (e) => {
         e.preventDefault();
-        const city = e.target[0].value;
+        const city = e.target.city.value;
 
         dispatch(setLoadImg());
         dispatch(setAirport([]));
@@ -70,18 +75,20 @@ const Input = () => {
     }
 
     return(
-        <div>
+        <div name="container" style={styles.container}>
             <form onSubmit={displayAirports}>
-                <div style={styles.wrapper}>
-                    <input style={styles.input} value={city} onChange={displayInput} placeholder="Type City..." required></input>
-                    <button disabled={loadedImg} style={styles.btn}>Search</button>
-                    {loadedImg? 
-                        <div style={styles.loadImg}></div>:
-                        <div style={styles.emptyDiv}></div>}
-                </div>
+                    <input name="city" style={styles.input} value={city} onChange={displayInput} placeholder="Type City..." required></input>
+                    <div name="wrapper" style={styles.wrapper}>
+                        <button disabled={dataIsLoaded} style={styles.btn}>
+                            Search
+                        </button>
+                        {dataIsLoaded? 
+                        <div name="imgDiv" style={styles.imgDiv}></div>:
+                        <div></div>}
+                    </div>
             </form>
         </div>
     )
 }
 
-export default Input
+export default SearchCity

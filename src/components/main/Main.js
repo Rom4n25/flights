@@ -12,8 +12,6 @@ const Main = () => {
         padding: "25px",
         margin: "35px",
         borderRadius: "25px",
-        minWidth: "750px",
-        height: "70vh"
     }
 
     if(airport.length===0){

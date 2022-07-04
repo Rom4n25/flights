@@ -38,7 +38,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background: url(../img/background.jpg) no-repeat center center fixed; 
-	height: 100vh;
+	overflow:auto;
+	
 }
 ol, ul {
 	list-style: none;
