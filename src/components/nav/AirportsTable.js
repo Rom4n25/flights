@@ -3,18 +3,20 @@ import {setAirport, setFlightsList, setFlightDetail} from "../../actions/index"
 
 const styles = {
     
-    wrapper:{
-        padding: "0px 25px 25px 25px",
+    container:{
+        backgroundColor: "rgba(248, 247, 255, 0.8)",
+        margin: "35px",
+        borderRadius: "25px",
+        padding: "25px",
     },
 
     table:{
         textAlign:"left",
-        fontSize: "18px",
-        width: "100%",
+        fontSize: "16px",
     },
 
     th:{
-        paddingBottom: "10px"
+        paddingBottom: "5px"
     },
 
     td:{
@@ -50,11 +52,11 @@ const AirportsTable = () =>{
     if(airportsList.length===0) return <div></div>
  
     return (
-        <div style={styles.wrapper}>
+        <div style={styles.container}>
             <table style={styles.table}>
                 <thead>
                     <tr>
-                        <th style={styles.th}>Airport Name</th>
+                        <th style={styles.th}>Airport name</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +64,9 @@ const AirportsTable = () =>{
                     <tr style={styles.tr} key={airport.key}>
                         <td style={styles.td}>{airport.name}</td>
                         <td style={styles.td}>
-                            <button style={styles.btn} onClick={()=>displayAirportDetails(airport)}>Details</button>
+                            <button style={styles.btn} onClick={()=>displayAirportDetails(airport)}>
+                                Show
+                            </button>
                         </td>
                     </tr>)}
                 </tbody>
