@@ -2,11 +2,18 @@ import { useSelector } from "react-redux";
 
 const AirportMap = () => {
   const airport = useSelector((state) => state.airport);
+
+  const style = {
+    frame: {
+      padding: "40px",
+    },
+  };
   return (
     <iframe
+      style={style.frame}
       title="frame"
-      width="600"
-      height="380"
+      width="850"
+      height="400"
       frameBorder="0"
       scrolling="no"
       marginHeight="0"
