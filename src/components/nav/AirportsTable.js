@@ -10,8 +10,9 @@ const styles = {
   container: {
     backgroundColor: "rgba(248, 247, 255, 0.8)",
     margin: "35px",
-    borderRadius: "25px",
+    borderRadius: "15px",
     padding: "25px",
+    color: "#343a40",
   },
 
   table: {

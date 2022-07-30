@@ -4,7 +4,7 @@ const WelcomeContent = () => {
   const styles = {
     gridContainer: {
       display: "grid",
-      gap: "40px",
+      gridGap: "40px",
       gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr)",
       justifyItems: "center",
       alignItems: "center",

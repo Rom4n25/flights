@@ -11,11 +11,12 @@ const Header = () => {
       gridColumnEnd: "3",
       borderBottom: "2px solid rgba(0, 0, 0, 0.4)",
     },
+    text: { color: "#343a40" },
   };
 
   return (
     <header style={styles.header}>
-      <div>World Airports</div>
+      <div style={styles.text}>World Airports</div>
     </header>
   );
 };

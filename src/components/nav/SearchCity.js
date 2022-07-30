@@ -20,7 +20,7 @@ const SearchCity = () => {
       padding: "25px",
       backgroundColor: "rgba(248, 247, 255, 0.8)",
       margin: "35px",
-      borderRadius: "25px",
+      borderRadius: "15px",
     },
 
     input: {
@@ -30,6 +30,7 @@ const SearchCity = () => {
       padding: "8px",
       textIndent: "10px",
       marginBottom: "12.5px",
+      color: "#343a40",
     },
 
     imgDiv: {
@@ -46,7 +47,7 @@ const SearchCity = () => {
       padding: "10px 12px",
       borderRadius: "25px",
       border: "none",
-      fontSize: "14px",
+      fontSize: "15px",
       fontWeight: "600",
       cursor: "pointer",
       backgroundColor: "#00b4d8",

@@ -23,7 +23,7 @@ const Airport = () => {
 
     flightsTable: {
       backgroundColor: "rgba(248, 247, 255, 0.8)",
-      borderRadius: "25px",
+      borderRadius: "15px",
       marginLeft: "40px",
       marinRight: "20px",
       justifyContent: "center",

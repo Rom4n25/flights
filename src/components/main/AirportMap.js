@@ -20,8 +20,8 @@ const AirportMap = () => {
       marginWidth="0"
       src={`https://www.openstreetmap.org/export/embed.html?bbox=${
         airport.lon
-      }%2C${airport.lat}%2C${airport.lon}%2C${
-        airport.lat - 0.02
+      }%2C${airport.lat - 0.022}%2C${airport.lon}%2C${
+        airport.lat
       }&amp;layer=mapnik`}
     ></iframe>
   );

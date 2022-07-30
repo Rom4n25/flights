@@ -10,7 +10,7 @@ const Main = () => {
       backgroundColor: "rgba(248, 247, 255, 0.2)",
       padding: "40px",
       margin: "35px",
-      borderRadius: "25px",
+      borderRadius: "15px",
     },
   };
 

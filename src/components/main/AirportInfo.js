@@ -15,8 +15,8 @@ const AirportInfo = () => {
       padding: "20px",
       fontSize: "18px",
       backgroundColor: "rgba(248, 247, 255, 0.8)",
-      borderRadius: "25px",
-      color: "#182825",
+      borderRadius: "15px",
+      color: "#343a40",
       minWidth: "340px",
     },
 
