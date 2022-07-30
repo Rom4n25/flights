@@ -1,10 +1,10 @@
 const airportsLoadingImgReducer = (state = false, action) => {
-    switch(action.type){
-        case "setLoadImg":
-            return !state;
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case "setLoadImg":
+      return !state;
+    default:
+      return state;
+  }
+};
 
-export default airportsLoadingImgReducer
+export default airportsLoadingImgReducer;
