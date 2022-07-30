@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/flights/static/css/main.0f7c9be3.css",
+    "main.js": "/flights/static/js/main.4492d21d.js",
+    "static/media/background.jpg": "/flights/static/media/background.50236cebe040ce5af716.jpg",
+    "static/media/loading.svg": "/flights/static/media/loading.d24d27bcd229ac896193d8d2fd38ece7.svg",
+    "index.html": "/flights/index.html",
+    "main.0f7c9be3.css.map": "/flights/static/css/main.0f7c9be3.css.map",
+    "main.4492d21d.js.map": "/flights/static/js/main.4492d21d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f7c9be3.css",
+    "static/js/main.4492d21d.js"
+  ]
+}
